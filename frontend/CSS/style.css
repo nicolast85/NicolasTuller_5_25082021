@@ -1,0 +1,29 @@
+@charset "UTF-8";
+body {
+    font-family: 'Architects Daughter', cursive;
+    background-color: rgba(243,233,241,255);
+}
+a {
+    color: #000;
+    font-size: 1.5rem;
+}
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+li a:hover {
+    color:#fff;
+    text-decoration: none;
+}
+h2 {
+    text-align: center;
+}
+.navbar {
+    background : linear-gradient(to left top, #8f5bfe, #e78b07);
+}
+.container {
+    background : linear-gradient(to left top, #8f5bfe, #e78b07);
+}
+.list-inline-item {
+    font-size: 1.5rem;
+}
