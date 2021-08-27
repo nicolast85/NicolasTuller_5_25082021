@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Architects Daughter', cursive, Arial, 'Arial Black', 'Comic Sans MS', Georgia, 'Times New Roman', Times, serif;
     background-color: rgba(243,233,241,255);
 }
 a {
@@ -15,15 +15,29 @@ li a:hover {
     color:#fff;
     text-decoration: none;
 }
-h2 {
-    text-align: center;
+.navbar-nav:hover {
+    color:#fff;
+}
+h1, h2 {
+    font-weight: bold;
+}
+p {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 .navbar {
     background : linear-gradient(to left top, #8f5bfe, #e78b07);
-}
-.container {
-    background : linear-gradient(to left top, #8f5bfe, #e78b07);
+    column-gap: 20px;
 }
 .list-inline-item {
     font-size: 1.5rem;
+}
+.produits {
+    width: 100%;
+    background : linear-gradient(to left top, #8f5bfe, #e78b07);
+    text-align: center;
+}
+footer {
+    width: 100%;
+    background : linear-gradient(to left top, #8f5bfe, #e78b07);
 }
