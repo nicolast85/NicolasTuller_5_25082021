@@ -41,3 +41,21 @@ footer {
     width: 100%;
     background : linear-gradient(to left top, #8f5bfe, #e78b07);
 }
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.teddies {
+   border: solid;
+   padding: 1rem;
+}
+#imageUrl {
+    width: 80%;
+    height: 80%;
+    align-items: center;
+}

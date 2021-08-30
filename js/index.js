@@ -15,7 +15,7 @@ function getArticles() {
            return articles
         })
         .catch(function(error) {
-            alert(error)
+            window.alert('Le serveur n\'est pas disponible, essayez ultérieurement.')
         })
 }
 
@@ -23,9 +23,10 @@ function displayArticles(article) {
     const templateElt = document.getElementById("templateArticle")
     const cloneElt = document.importNode(templateElt.content, true)
 
-    cloneElt.getElementById("imageUrl").textContent = article.imageUrl
+    cloneElt.getElementById("imageUrl").src = article.imageUrl
     cloneElt.getElementById("name").textContent = article.name
-    cloneElt.getElementById("price").textContent = article.price
+    cloneElt.getElementById("price").textContent = article.price / 100 + " €"
+    cloneElt.getElementById("_id").href = article._id
 
     document.getElementById("main").appendChild(cloneElt)
 }
