@@ -26,7 +26,7 @@ function displayArticles(article) {
     cloneElt.getElementById("imageUrl").src = article.imageUrl
     cloneElt.getElementById("name").textContent = article.name
     cloneElt.getElementById("price").textContent = article.price / 100 + " €"
-    cloneElt.getElementById("_id").href += '?id={article._id}'
+    cloneElt.getElementById("_id").href += '?id=' + article._id
 
     document.getElementById("main").appendChild(cloneElt)
 }
