@@ -1,0 +1,107 @@
+<!doctype html>
+  <html lang="fr">
+    <head>
+        <meta charset="utf-8">
+	    <title>Orinoco</title>
+	    <meta name="description" content="Fabriquant d'ours en peluche faits à la main">
+	    <meta name="robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="./js/panier.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid px-0">
+              <img src="images/logo.png" width="20%" height="15%" alt="Logo Orinoco" title="Logo d'Orinoco">
+            </div>
+            <nav class="navbar navbar-expand-md navbar-light">
+              <p class="text-body mb-0">Menu</p>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link text-body" href="index.html" title="Accueil - Orinoco">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link text-body" href="panier.html">Panier</a></li>
+                <li class="nav-item"><a class="nav-link text-body" href="#">Commande</a></li>
+              </ul>
+            </div>
+            </nav>   
+          </header>
+          <div id = "display"  class="row py-5 p-4">
+            <div class="col-lg-10 pb-5">
+              <div id="cart" class="table-responsive"></div>
+            </div>
+          </div>        
+          <section id="formulaire">
+            <div class="row p-4 text-center">
+                <div class="col-lg-10">
+                  <div class="px-4 py-3">
+                      <h5>Formulaire de contact</h5>             
+                      <form action="confirmation.html" method="POST" >     
+                        <div id="formulaire__nom">
+                          <label for='nom'>Nom</label>
+                          <input type='text' placeholder="Nxxxx" name='nom' id='nom' maxlength='30'  pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>
+                          <span id='missNom'></span><br>              
+                        </div>        
+                        <div id="formulaire__prenom">
+                          <label for='prenom'>Prénom</label>
+                          <input type='text' placeholder="Pxxxx" name='prenom' id='prenom' maxlength='20' pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>
+                          <span id='missPrenom'></span><br>              
+                        </div>       
+                        <div id="formulaire__email">
+                          <label for='mail'>e-mail</label>
+                          <input type='email' placeholder="email@xxxx.fr" name='mail' id='mail' pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" required>
+                          <span id='missEmail'></span>
+                        </div>    
+                        <div id="formulaire__address">
+                            <label for='address'>Adresse</label>
+                            <input type='text' placeholder="Axxxx" name='address' id='address' pattern="/^\d+\s[A-z]+\s[A-z]+/" required> 
+                            <span id='missAddress'></span>
+                          </div>      
+                        <div id="formulaire__ville">
+                          <label for='ville'>Ville</label>
+                          <input type='text' placeholder="Vxxxx" name='ville' id='ville' pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required> 
+                          <span id='missVille'></span>
+                        </div>                                                
+                        <div id="formulaire__phone">
+                            <label for='phone'>Téléphone</label>
+                            <input type='text' placeholder="06xxxxxxxx" name='phone' id='phone' pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" required> 
+                            <span id='missPhone'></span>
+                        </div> 
+                      </form> 
+                    </div>
+                </div>         
+            </div>     
+            <div class="commande text-center">
+                <input class="commande__validation p-2" type='submit' value='Valider la commande'>
+            </div>     
+          </section>
+          <button class="btn-retour mx-auto">
+            <a href="index.html" alt="Retour à l'accueil">Retour à l'accueil</a>
+          </button>
+    <footer>
+        <div class="container">
+          <div class="row pt-4 pb-3">
+            <div class="col">
+              <ul class="list-inline text-center">
+                <li class="list-inline-item"><a href="#">À propos</a></li>
+                <li class="list-inline-item">&middot;</li>
+                <li class="list-inline-item"><a href="mailto:contact@orinoco.com" title="Mail d'Orinoco">Nous contacter</a></li>
+                <li class="list-inline-item">&middot;</li>
+                <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      </body>
+</html>

@@ -76,13 +76,13 @@ newDiv.appendChild(div1);
   newDiv.appendChild(button);
 
   button.addEventListener('click', addProduct) 
-  
+
   function addProduct(){ // fonction pour ajouter le produit au localstorage
 
     let products = []; 
     if (getSelectedColors()) {
       if(localStorage.getItem('products')) {
-        products = JSON.parse(localStorage.getItem('products')); 
+        products = JSON.parse(localStorage.getItem('products')); // Converti les données au format JSON qui sont dans le localstorage
       }
 
       products.push({_id : teddie._id, image : teddie.imageUrl, name : teddie.name, colors : colors.value, price : teddie.price/100 });
@@ -96,4 +96,13 @@ newDiv.appendChild(div1);
 };
 
 // fonction qui affiche le nombre d'article dans le panier
-//displayQty();
+function displayQty(){
+  let quantityInCart = document.getElementById('checkout_items');
+  if(products === null){
+      quantityInCart.innerHTML = '0';
+  }else{
+      quantityInCart.innerHTML = products.length;
+  }    
+  return quantityInCart;
+
+};

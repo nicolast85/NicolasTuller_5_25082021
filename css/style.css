@@ -18,7 +18,7 @@ li a:hover {
 .navbar-nav:hover {
     color:#fff;
 }
-h1, h2 {
+h1, h2, h5 {
     font-weight: bold;
 }
 p {
@@ -80,7 +80,7 @@ footer {
     margin-right: auto;
     margin-left: auto;
 }
-.btn:hover {
+.btn:hover, input:hover {
     color: #fff;
 }
 .card-price {
@@ -92,6 +92,7 @@ footer {
     font-weight: bold;
     background : linear-gradient(to left top, #8f5bfe, #e78b07);
     width: 10rem;
+    cursor: pointer;
 }
 option {
     color: #000;
@@ -114,4 +115,24 @@ option {
 }
 .btn-retour a {
     font-size: 1rem;
+}
+label {
+    font-weight: bold;
+}
+input {
+    background : linear-gradient(to left top, #8f5bfe, #e78b07);
+    font-weight: bold;
+    border-radius: 0.25rem;
+    border-color: #8f5bfe;
+}
+.btn input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input::placeholder {
+    color: #fff;
+}
+.commande__validation {
+    border: none;
 }
