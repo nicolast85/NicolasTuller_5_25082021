@@ -58,19 +58,19 @@ function viewTeddie(teddie) {
     select.appendChild(option);
 
 }
-
+  // Affiche le prix en Euro des teddies
     let string = document.createElement('string');
     string.className = 'card-price';
     string.innerHTML = teddie.price/100 + " €";
 
     div1.appendChild(string);
 
-newDiv.appendChild(div1);
+  newDiv.appendChild(div1); 
 
   let button = document.createElement('button');
   button.setAttribute = 'type', 'submit';
   button.id = 'btnAddCart'
-  button.className = 'btn';
+  button.className = 'btn btn-primary';
   button.innerHTML = 'Ajouter au panier';
 
   newDiv.appendChild(button);
@@ -82,27 +82,14 @@ newDiv.appendChild(div1);
     let products = []; 
     if (getSelectedColors()) {
       if(localStorage.getItem('products')) {
-        products = JSON.parse(localStorage.getItem('products')); // Converti les données au format JSON qui sont dans le localstorage
+        products = JSON.parse(localStorage.getItem('products')); 
       }
 
-      products.push({_id : teddie._id, image : teddie.imageUrl, name : teddie.name, colors : colors.value, price : teddie.price/100 });
+      products.push({_id : teddie._id, image : teddie.imageUrl, name : teddie.name, colors : colors.value, price : teddie.price/100});
       localStorage.setItem('products', JSON.stringify(products));
-      alert('Ajouté au panier, Merci !');
+
+      alert('Votre article a été ajouté au panier. Merci !');
       window.location.reload();
-      
     } 
   };
-
-};
-
-// fonction qui affiche le nombre d'article dans le panier
-function displayQty(){
-  let quantityInCart = document.getElementById('checkout_items');
-  if(products === null){
-      quantityInCart.innerHTML = '0';
-  }else{
-      quantityInCart.innerHTML = products.length;
-  }    
-  return quantityInCart;
-
 };

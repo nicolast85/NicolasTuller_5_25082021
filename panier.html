@@ -32,55 +32,72 @@
             </div>
             </nav>   
           </header>
-          <div id = "display"  class="row py-5 p-4">
-            <div class="col-lg-10 pb-5">
-              <div id="cart" class="table-responsive"></div>
-            </div>
-          </div>        
-          <section id="formulaire">
-            <div class="row p-4 text-center">
-                <div class="col-lg-10">
-                  <div class="px-4 py-3">
-                      <h5>Formulaire de contact</h5>             
-                      <form action="confirmation.html" method="POST" >     
-                        <div id="formulaire__nom">
-                          <label for='nom'>Nom</label>
-                          <input type='text' placeholder="Nxxxx" name='nom' id='nom' maxlength='30'  pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>
-                          <span id='missNom'></span><br>              
-                        </div>        
-                        <div id="formulaire__prenom">
-                          <label for='prenom'>Prénom</label>
-                          <input type='text' placeholder="Pxxxx" name='prenom' id='prenom' maxlength='20' pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>
-                          <span id='missPrenom'></span><br>              
-                        </div>       
-                        <div id="formulaire__email">
-                          <label for='mail'>e-mail</label>
-                          <input type='email' placeholder="email@xxxx.fr" name='mail' id='mail' pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" required>
-                          <span id='missEmail'></span>
-                        </div>    
-                        <div id="formulaire__address">
-                            <label for='address'>Adresse</label>
-                            <input type='text' placeholder="Axxxx" name='address' id='address' pattern="/^\d+\s[A-z]+\s[A-z]+/" required> 
-                            <span id='missAddress'></span>
-                          </div>      
-                        <div id="formulaire__ville">
-                          <label for='ville'>Ville</label>
-                          <input type='text' placeholder="Vxxxx" name='ville' id='ville' pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required> 
-                          <span id='missVille'></span>
-                        </div>                                                
-                        <div id="formulaire__phone">
-                            <label for='phone'>Téléphone</label>
-                            <input type='text' placeholder="06xxxxxxxx" name='phone' id='phone' pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" required> 
-                            <span id='missPhone'></span>
-                        </div> 
-                      </form> 
+          <main>
+            <div class="container">
+                <div class="card-panier text-center">
+                    <h1 class="cart">Votre panier</h1>
+                    <div class="card-panier__commande">
+                        <div class="row card-panier__commande">
+                            <div class="col card-panier__commande font-weight-bold">Nom</div>
+                            <div class="col card-panier__commande title-colors font-weight-bold">Couleur</div>
+                            <div class="col card-panier__commande font-weight-bold">Prix </div>  
+                        </div>                     
+                        <div class="width-vide-panier">
+                            <a href="panier.html">
+                                <div class="card-panier__form__button vide-panier">
+                                    Vider le panier
+                                </div>
+                            </a>
+                        </div>
+                        <h2 class="total"></h2>            
                     </div>
-                </div>         
-            </div>     
-            <div class="commande text-center">
-                <input class="commande__validation p-2" type='submit' value='Valider la commande'>
-            </div>     
-          </section>
+        
+                    <div class="card-panier__form">
+                        <h2>Information à remplir pour la livraison</h2>
+                            <form class="form">   
+                                <div class="card-panier__form-line" id="bloc__prenom">
+                                    <label for="prenom">Prénom :</label>
+                                    <input type="text" placeholder="Prénom" id="prenom" name="client_prenom" maxlength="20" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required> 
+                                </div>
+                                <div class="card-panier__form-line" id="bloc__nom">
+                                    <label for="nom">Nom :</label>
+                                    <input type="text" placeholder="Nom" id="nom" name="client_nom" maxlength="20" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>
+                                </div>                                               
+                                <div class="card-panier__form-line" id="bloc__cp">
+                                    <label for="cp">Code postal :</label>
+                                    <input type="text" placeholder="Code postal" id="cp" name="client_cp" pattern="/^(([0-8][0-9])|(9[0-5]))[0-9]{3}$/" required>
+                                </div>
+                                <div class="card-panier__form-line" id="bloc__ville">
+                                    <label for="ville">Ville :</label>
+                                    <input type="text" placeholder="Ville" id="ville" name="client_ville" maxlength="20" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>
+                                </div>                         
+                                <div class="card-panier__form-line" id="bloc__adresse">
+                                    <label for="adresse">Adresse :</label>
+                                    <input type="text" placeholder="Adresse" id="adresse" name="client_adresse" pattern="/^\d+\s[A-z]+\s[A-z]+/" required>
+                                </div>
+                                <div class="card-panier__form-line" id="bloc__mail">
+                                    <label for="mail">Mail :</label>
+                                    <input type="email" placeholder="@mail" id="mail" name="client_mail" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" required>
+                                </div>
+                                <div class="card-panier__form-line" id="bloc__telephone">
+                                    <label for="telephone" >Téléphone :</label>
+                                    <input type="tel" placeholder="Numéro de téléphone" id="telephone" name="client_telephone" pattern="/^[+](\d{3})\)?(\d{3})(\d{5,6})$|^(\d{10,10})$/" required >
+                                </div>
+                                <div class="erreur text-danger font-weight-bold"></div>
+                                <div class="card-panier__form__buttons">
+                                    <div id="submit" class="card-panier__form__button to-pay" >Commander</div>
+                                </div>
+                            </form>    
+                        <div class="added-to-cart-confirmation">
+                            <p class="confirmation-text"></p>
+                        </div>                                               
+                    </div>
+                </div>
+                <div class="panier-vide">
+                    <h2>Votre panier est vide !</h2>
+                </div>
+            </div>
+        </main>
           <button class="btn-retour mx-auto">
             <a href="index.html" alt="Retour à l'accueil">Retour à l'accueil</a>
           </button>
