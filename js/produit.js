@@ -18,8 +18,8 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
   // fonction qui affiche la fiche produit
 function viewTeddie(teddie) {
 
-    let newDiv = document.createElement('div');
-  newDiv.className = 'card';
+  let newDiv = document.createElement('div');
+  newDiv.className = 'card m-3 p-3';
 
   teddieChoix.appendChild(newDiv);
 
@@ -58,6 +58,7 @@ function viewTeddie(teddie) {
     select.appendChild(option);
 
 }
+  
   // Affiche le prix en Euro des teddies
     let string = document.createElement('string');
     string.className = 'card-price';
@@ -69,8 +70,8 @@ function viewTeddie(teddie) {
 
   let button = document.createElement('button');
   button.setAttribute = 'type', 'submit';
-  button.id = 'btnAddCart'
-  button.className = 'btn btn-primary';
+  button.id = 'btnAjoutPanier'
+  button.className = 'btn text-body';
   button.innerHTML = 'Ajouter au panier';
 
   newDiv.appendChild(button);

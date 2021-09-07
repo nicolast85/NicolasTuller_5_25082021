@@ -25,9 +25,9 @@
                 </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link text-body" href="index.html" title="Accueil - Orinoco">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link text-body" href="panier.html">Panier</a></li>
-                <li class="nav-item"><a class="nav-link text-body" href="#">Commande</a></li>
+                <li class="nav-item nav-link text-body"><a href="index.html" title="Accueil - Orinoco">Accueil</a></li>
+                <li class="nav-item nav-link text-body"><a href="panier.html">Panier</a></li>
+                <li class="nav-item nav-link text-body"><a href="#">Commande</a></li>
               </ul>
             </div>
             </nav>   
@@ -36,23 +36,23 @@
             <div class="container">
                 <div class="card-panier text-center">
                     <h1 class="cart">Votre panier</h1>
-                    <div class="card-panier__commande">
-                        <div class="row card-panier__commande">
+                    <div class="card-panier__commande votre__commande m-2">
+                        <div class="row card-panier__commande legende mx-auto">
                             <div class="col card-panier__commande font-weight-bold">Nom</div>
                             <div class="col card-panier__commande title-colors font-weight-bold">Couleur</div>
                             <div class="col card-panier__commande font-weight-bold">Prix </div>  
                         </div>                     
                         <div class="width-vide-panier">
                             <a href="panier.html">
-                                <div class="card-panier__form__button vide-panier">
-                                    Vider le panier
+                                <div class="card-panier__form__button vide-panier text-right">
+                                    Vider le panier ! 
                                 </div>
                             </a>
                         </div>
-                        <h2 class="total"></h2>            
+                        <h2 class="total text-right"></h2>            
                     </div>
         
-                    <div class="card-panier__form">
+                    <div class="card-panier__form m-2">
                         <h2>Information à remplir pour la livraison</h2>
                             <form class="form">   
                                 <div class="card-panier__form-line" id="bloc__prenom">
