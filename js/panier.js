@@ -83,7 +83,7 @@ function formulaire() {
   // On récupère les inputs depuis le DOM.
   const submit = document.querySelector("#submit");
   let inputPrenom = document.querySelector("#prenom");
-  let inputLastName = document.querySelector("#nom");
+  let inputNom = document.querySelector("#nom");
   let inputCp = document.querySelector("#cp");
   let inputVille = document.querySelector("#ville");
   let inputAdresse = document.querySelector("#adresse");
@@ -114,16 +114,42 @@ function formulaire() {
 
       const order = {
         contact: {
-          prenom: inputPrenom.value,
-          nom: inputNom.value,
-          cp: inputCp.value,
-          ville: inputVille.value,
-          addresse: inputAdresse.value,
+          firstName: inputPrenom.value,
+          lastName: inputNom.value,
+          city: inputVille.value,
+          address: inputAdresse.value,
           email: inputMail.value,
-          telephone: inputTelephone.value,
         },
         products: produitAcheter,
       };
+
+      // Envoi de la requête POST au back-end
+      // Création de l'entête de la requête
+      const options = {
+        method: "POST",
+        body: JSON.stringify(order),
+        headers: { "Content-Type": "application/json" },
+      };
+
+      // Préparation du prix formaté pour l'afficher sur la prochaine page
+      let priceConfirmation = document.querySelector(".total").innerText;
+      priceConfirmation = priceConfirmation.split(" :");
+
+      // Envoie de la requête avec l'en-tête. On changera de page avec un localStorage qui ne contiendra plus que l'order id et le prix.
+      fetch("http://localhost:3000/api/teddies/order", options)
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.clear();
+          console.log(data)
+          localStorage.setItem("orderId", data.orderId);
+          localStorage.setItem("total", priceConfirmation[1]);
+
+          //  On peut commenter cette ligne pour vérifier le statut 201 de la requête fetch. Le fait de préciser la destination du lien ici et non dans la balise <a> du HTML permet d'avoir le temps de placer les éléments comme l'orderId dans le localStorage avant le changement de page.
+           document.location.href = "confirmation.html";
+        })
+        .catch((err) => {
+          alert("Il y a eu une erreur : " + err);
+        });
     }
   });
 }

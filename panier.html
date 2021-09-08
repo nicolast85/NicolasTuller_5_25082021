@@ -2,8 +2,8 @@
   <html lang="fr">
     <head>
         <meta charset="utf-8">
-	    <title>Orinoco</title>
-	    <meta name="description" content="Fabriquant d'ours en peluche faits à la main">
+	    <title>Orinoco - Votre Panier</title>
+	    <meta name="description" content="Orinoco, fabriquant d'ours en peluche faits à la main">
 	    <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -27,7 +27,7 @@
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item nav-link text-body"><a href="index.html" title="Accueil - Orinoco">Accueil</a></li>
                 <li class="nav-item nav-link text-body"><a href="panier.html">Panier</a></li>
-                <li class="nav-item nav-link text-body"><a href="#">Commande</a></li>
+                <li class="nav-item nav-link text-body"><a href="confirmation.html">Commande</a></li>
               </ul>
             </div>
             </nav>   
@@ -35,25 +35,24 @@
           <main>
             <div class="container">
                 <div class="card-panier text-center">
-                    <h1 class="cart">Votre panier</h1>
+                    <h1 class="cart my-3">Votre panier</h1>
                     <div class="card-panier__commande votre__commande m-2">
-                        <div class="row card-panier__commande legende mx-auto">
+                        <div class="row card-panier__commande legende mx-auto mb-1">
                             <div class="col card-panier__commande font-weight-bold">Nom</div>
                             <div class="col card-panier__commande title-colors font-weight-bold">Couleur</div>
                             <div class="col card-panier__commande font-weight-bold">Prix </div>  
                         </div>                     
                         <div class="width-vide-panier">
                             <a href="panier.html">
-                                <div class="card-panier__form__button vide-panier text-right">
+                                <div class="card-panier__form__button vide-panier text-right mr-2">
                                     Vider le panier ! 
                                 </div>
                             </a>
                         </div>
-                        <h2 class="total text-right"></h2>            
-                    </div>
-        
+                        <h2 class="total text-right mr-2"></h2>            
+                    </div>       
                     <div class="card-panier__form m-2">
-                        <h2>Information à remplir pour la livraison</h2>
+                        <h2>Information à remplir pour la livraison :</h2>
                             <form class="form">   
                                 <div class="card-panier__form-line" id="bloc__prenom">
                                     <label for="prenom">Prénom :</label>
@@ -83,9 +82,11 @@
                                     <label for="telephone" >Téléphone :</label>
                                     <input type="tel" placeholder="Numéro de téléphone" id="telephone" name="client_telephone" pattern="/^[+](\d{3})\)?(\d{3})(\d{5,6})$|^(\d{10,10})$/" required >
                                 </div>
-                                <div class="erreur text-danger font-weight-bold"></div>
-                                <div class="card-panier__form__buttons">
-                                    <div id="submit" class="card-panier__form__button to-pay" >Commander</div>
+                                <div class="erreur text-danger font-weight-bold m-2"></div>
+                                <div class="card-panier__form__buttons text-right mr-2">
+                                    <div id="submit" class="card-panier__form__button to-pay" >
+                                      <h3>Commander !</h3>
+                                    </div>
                                 </div>
                             </form>    
                         <div class="added-to-cart-confirmation">

@@ -22,7 +22,7 @@ li a:hover {
 .navbar-nav:hover {
     color:#fff;
 }
-h1, h2, h5 {
+h1, h2, h3, h5 {
     font-weight: bold;
 }
 p {
@@ -160,5 +160,19 @@ input::placeholder {
     background : linear-gradient(to left top, #8f5bfe, #e78b07);
 }
 .card-panier__form__button:hover {
-    color: blue;
+    color: #850260;
+}
+.erreur {
+    font-size: 1.5rem;
+}
+#submit > h3:hover {
+    cursor: pointer;
+}
+.card-panier__form > h2 {
+    margin: 0.5rem
+}
+.recap {
+    border: solid;
+    border-color: #850260;
+    border-width: 0.25rem;
 }
