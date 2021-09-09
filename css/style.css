@@ -176,3 +176,6 @@ input::placeholder {
     border-color: #850260;
     border-width: 0.25rem;
 }
+.name, .price2, .id {
+    background : linear-gradient(to left top, #8f5bfe, #e78b07);
+}
