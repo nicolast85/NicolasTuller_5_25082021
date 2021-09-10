@@ -6,6 +6,7 @@
     }
 })()
 
+// Appel de l'API
 function getArticles() {
     return fetch("http://localhost:3000/api/teddies")
         .then(function(httpBodyResponse) {
@@ -19,6 +20,7 @@ function getArticles() {
         })
 }
 
+// Disposition des données de l'API dans les balises 
 function displayArticles(article) {
     const templateElt = document.getElementById("templateArticle")
     const cloneElt = document.importNode(templateElt.content, true)

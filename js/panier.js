@@ -43,14 +43,15 @@ function panier() {
   }
 }
 
+// Calcul et affichage du total de la commande du panier
 function totalPanier () {
   let prixCommande = [];
   let totalPrix = document.querySelector(".total");
 
   // On push chaque prix du DOM dans un tableau
-  let teddiePriceQuantity = document.querySelectorAll(".price");
-  for (let price in teddiePriceQuantity) {
-    prixCommande.push(teddiePriceQuantity[price].innerHTML);
+  let teddiePrices = document.querySelectorAll(".price");
+  for (let price in teddiePrices) {
+    prixCommande.push(teddiePrices[price].innerHTML);
   }
 
   // On enlève les undefined du tableau
@@ -62,7 +63,7 @@ function totalPanier () {
   prixCommande = prixCommande.map((x) => parseFloat(x));
 
   // Additionner les valeurs du tableau pour avoir le prix total
-  const reducer = (acc, currentVal) => acc + currentVal;
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
   prixCommande = prixCommande.reduce(reducer);
 
   // Affichage du prix en €
@@ -124,7 +125,6 @@ function formulaire() {
       };
 
       // Envoi de la requête POST au back-end
-      // Création de l'entête de la requête
       const options = fetch("http://localhost:3000/api/teddies/order", {
         method: "POST",
         body: JSON.stringify(order),
@@ -132,12 +132,13 @@ function formulaire() {
           "Content-Type": "application/json"
         },
       });
+      
+       // Affichage uniquement du prix sur la prochaine page
+       let priceConfirmation = document.querySelector(".total").innerText;
+       priceConfirmation = priceConfirmation.split(" :");
 
-      // Préparation du prix formaté pour l'afficher sur la prochaine page
-      let priceConfirmation = document.querySelector(".total").innerText;
-      priceConfirmation = priceConfirmation.split(" :");
-
-      // Envoie de la requête avec l'en-tête. On changera de page avec un localStorage qui ne contiendra plus que l'order id et le prix.
+      // Envoie de la requête, on changera de page avec un localStorage qui ne contiendra 
+      // plus que le prénom, l'orderId et le prix.
       fetch("http://localhost:3000/api/teddies/order", options)
       .then((response) => response.json())
       .then((data) => {
@@ -145,10 +146,10 @@ function formulaire() {
         localStorage.setItem("name", inputPrenom.value);
         localStorage.setItem("total", priceConfirmation[1]);
         localStorage.setItem("orderId", data.orderId);
-
-        //  On peut commenter cette ligne pour vérifier le statut 201 de la requête fetch. Le fait de préciser la destination du lien ici et non dans la balise <a> du HTML permet d'avoir le temps de placer les éléments comme l'orderId dans le localStorage avant le changement de page.
+ 
+        // Destination de la requête
          document.location.href = "confirmation.html";
-      }) 
+      })      
         .catch((err) => {
           alert("Il y a eu une erreur : " + err);
         });

@@ -7,22 +7,25 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
         window.alert('Le serveur n\'est pas disponible, essayez ultérieurement.')
   });
 
-  function teddieId() { // fonction qui recupère l 'ID du teddie
+  // fonction qui recupère l 'ID du teddie
+  function teddieId() {
     return location.search.split('=')[1];
   }
 
-  function getSelectedColors() { // fonction qui permet de selectionner la couleur 
+  // fonction qui permet de selectionner la couleur
+  function getSelectedColors() {
     return colors.value;
   }
 
-  // fonction qui affiche la fiche produit
-function viewTeddie(teddie) {
+  // fonction qui affiche la fiche produit avec création des <div>
+  function viewTeddie(teddie) {
 
   let newDiv = document.createElement('div');
   newDiv.className = 'card m-3 p-3';
 
   teddieChoix.appendChild(newDiv);
 
+  // Image du teddie
   let img = document.createElement('img');
   img.className = 'card-img-top';
   img.src = teddie.imageUrl;
@@ -32,19 +35,22 @@ function viewTeddie(teddie) {
 
   let div1 = document.createElement('div');
   div1.className = 'card-body';
-
+  
+  // Nom du teddie
   let h1 = document.createElement('h1');
   h1.className = 'card-title text-center';
   h1.innerHTML = teddie.name;
 
   div1.appendChild(h1);
 
+  // Description du teddie
   let p = document.createElement('p');
   p.className = 'card-text text-center';
   p.innerHTML = teddie.description;
 
   div1.appendChild(p);
 
+  // Selector des couleurs du teddie
   let select = document.createElement('select');
   select.className = 'custom-select';
   select.id = 'colors';
@@ -68,6 +74,7 @@ function viewTeddie(teddie) {
 
   newDiv.appendChild(div1); 
 
+  // Bouton Ajouter au panier
   let button = document.createElement('button');
   button.setAttribute = 'type', 'submit';
   button.id = 'btnAjoutPanier'
@@ -78,7 +85,8 @@ function viewTeddie(teddie) {
 
   button.addEventListener('click', addProduct) 
 
-  function addProduct(){ // fonction pour ajouter le produit au localstorage
+  // fonction pour ajouter le produit au localstorage et l'avoir dans le panier
+  function addProduct(){
 
     let products = []; 
     if (getSelectedColors()) {
