@@ -114,19 +114,20 @@ body {
         border-color: #850260;
     }
     .btn-retour {
-        background : linear-gradient(to left top, #8f5bfe, #e78b07);
         font-weight: bold;
-        padding: 0.5rem;
-        margin: 1rem;
-        border-radius: 0.25rem;
-        font-size: 0.5rem;
         display: flex;
         justify-content: center;
-        border-width: 0.10rem;
-        border-color: #850260;   
+           
     }
     .btn-retour a {
         font-size: 1rem;
+        background : linear-gradient(to left top, #8f5bfe, #e78b07);
+        padding: 0.5rem;
+        margin: 1rem;
+        border-radius: 0.25rem;
+        border: solid;
+        border-width: 0.10rem;
+        border-color: #850260;
     }
     #btnAjoutPanier {
         border-color: #850260;
@@ -166,6 +167,9 @@ body {
     }
     .card-panier__form__button:hover {
         color: #850260;
+    }
+    .total {
+        font-size: 2rem;
     }
     .erreur {
         font-size: 1.5rem;
