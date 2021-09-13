@@ -7,8 +7,8 @@ function main() {
 // Affiche les données du localStorage dans leur <div>
 function orderConfirm() {
   const orderName = document.querySelector(".name h2");
-  const orderTotal = document.querySelector(".total string");
-  const orderId = document.querySelector(".orderid string");
+  const orderTotal = document.querySelector(".total span");
+  const orderId = document.querySelector(".orderid span");
   
 
 // Renvoie les donnée du localStorage

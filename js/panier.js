@@ -55,11 +55,11 @@ function totalPanier () {
   }
 
   // On enlève les undefined du tableau
-  prixCommande = prixCommande.filter((el) => {
-    return el != undefined;
+  prixCommande = prixCommande.filter((und) => {
+    return und != undefined;
   });
 
-  // Transformer en nombre chaque valeur du tableau
+  // On Transforme en nombre toute les valeurs du tableau
   prixCommande = prixCommande.map((x) => parseFloat(x));
 
   // Additionner les valeurs du tableau pour avoir le prix total
@@ -69,6 +69,8 @@ function totalPanier () {
   // Affichage du prix en €
   totalPrix.innerText = `Total : ${(prixCommande = new Intl.NumberFormat("fr-FR",{ style: "currency", currency: "EUR", }).format(prixCommande))}`;
 }
+
+
 
 // Lorsque qu'on clique sur le bouton, le panier se vide ainsi que le localStorage
 function viderPanier() {
@@ -81,7 +83,7 @@ function viderPanier() {
 
 function formulaire() {
 
-  // On récupère les inputs depuis le DOM.
+  // On récupère les inputs depuis le formulaire.
   const submit = document.querySelector("#submit");
   let inputPrenom = document.querySelector("#prenom");
   let inputNom = document.querySelector("#nom");
