@@ -165,6 +165,10 @@ body {
     .legende {
         background : linear-gradient(to left top, #8f5bfe, #e78b07);
     }
+    .card-panier__commande {
+        align-items: center;
+        font-size: 1.10rem;
+    }
     .card-panier__form__button:hover {
         color: #850260;
     }

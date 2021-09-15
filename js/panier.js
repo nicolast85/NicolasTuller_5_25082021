@@ -1,4 +1,8 @@
+// Sélection de la classe ou j'injecte le contenue HTML
 let cart = document.querySelector(".card-panier__commande");
+
+// Déclaration de la variable "objetLocalStorage" dans laquelle on met les key et les values qui sont dans le localStorage
+// JSON.parse : pour convertir les données au format JSON qui sont dans le local storage en objet JavaScript
 let objetLocalStorage = JSON.parse(localStorage.getItem("products"));
 
 main();
@@ -24,7 +28,13 @@ function panier() {
   for (let produit in objetLocalStorage) {
     let descriptionTeddie = document.createElement("div");
     cart.insertBefore(descriptionTeddie, test);
-    descriptionTeddie.classList.add("row", "card-panier__commande", "description-teddie");
+    descriptionTeddie.classList.add("row", "card-panier__commande", "description-teddie", "mb-2");
+
+    let teddiePhoto = document.createElement("img");
+    descriptionTeddie.appendChild(teddiePhoto);
+    teddiePhoto.classList.add("col", "card-panier__commande");
+    teddiePhoto.src = objetLocalStorage[produit].image;
+    teddiePhoto.style = (style="width:10%;");
 
     let teddieName = document.createElement("div");
     descriptionTeddie.appendChild(teddieName);
