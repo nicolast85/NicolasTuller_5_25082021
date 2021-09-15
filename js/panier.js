@@ -29,23 +29,27 @@ function panier() {
     let descriptionTeddie = document.createElement("div");
     cart.insertBefore(descriptionTeddie, test);
     descriptionTeddie.classList.add("row", "card-panier__commande", "description-teddie", "mb-2");
-
+    
+    // Div photo
     let teddiePhoto = document.createElement("img");
     descriptionTeddie.appendChild(teddiePhoto);
     teddiePhoto.classList.add("col", "card-panier__commande");
     teddiePhoto.src = objetLocalStorage[produit].image;
     teddiePhoto.style = (style="width:10%;");
 
+    // Div Nom du Teddie
     let teddieName = document.createElement("div");
     descriptionTeddie.appendChild(teddieName);
     teddieName.classList.add("col", "card-panier__commande");
     teddieName.innerHTML = objetLocalStorage[produit].name;
 
+    // Div Couleur
     let teddieColors = document.createElement("div");
     descriptionTeddie.appendChild(teddieColors);
     teddieColors.classList.add("col", "card-panier__commande", "title-colors");
     teddieColors.innerHTML = objetLocalStorage[produit].colors;
 
+    // Div Prix
     let teddiePrice = document.createElement("div");
     descriptionTeddie.appendChild(teddiePrice);
     teddiePrice.classList.add("col", "card-panier__commande", "price");
@@ -53,7 +57,7 @@ function panier() {
   }
 }
 
-// Calcul et affichage du total de la commande du panier
+// ---- Calcul et affichage du total de la commande du panier ----
 function totalPanier () {
   let prixCommande = [];
   let totalPrix = document.querySelector(".total");

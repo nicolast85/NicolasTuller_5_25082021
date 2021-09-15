@@ -49,13 +49,15 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
   p.innerHTML = teddie.description;
 
   div1.appendChild(p);
+  p.insertAdjacentText("beforebegin", "Description :");
 
-  // Selector des couleurs du teddie
+  // Sélecteur des couleurs du teddie
   let select = document.createElement('select');
   select.className = 'custom-select';
   select.id = 'colors';
 
   div1.appendChild(select);
+  select.insertAdjacentText("beforebegin", "Choix de la couleurs :");
 
   // boucle pour afficher les différentes couleurs des teddies
   for (let i = 0; i < teddie.colors.length; i++) {
@@ -71,6 +73,7 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
     string.innerHTML = teddie.price/100 + " €";
 
     div1.appendChild(string);
+    string.insertAdjacentText("beforebegin", "Prix : ");
 
   newDiv.appendChild(div1); 
 

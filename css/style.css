@@ -81,6 +81,7 @@ body {
     }
     .card-body {
         flex-direction: column;
+        font-weight: bold;
     }
     .btn {
         background : linear-gradient(to left top, #8f5bfe, #e78b07);
@@ -170,16 +171,36 @@ body {
         font-size: 1.10rem;
     }
     .card-panier__form__button:hover {
-        color: #850260;
+        color: #fff;
     }
     .total {
         font-size: 2rem;
+        clear: right;
     }
     .erreur {
         font-size: 1.5rem;
     }
+    button#submit {
+        background-image : linear-gradient(to left top, #8f5bfe, #e78b07);
+        border-color: #850260;
+        border-radius: 0.25rem;
+        border-width: 0.10rem;
+    }
+    #submit > h3 {
+        margin: 0.25rem;
+    }
     #submit > h3:hover {
         cursor: pointer;
+        color: #fff;
+    }
+    .width-vide-panier {
+        background : linear-gradient(to left top, #8f5bfe, #e78b07);
+        width: 60%;
+        border: solid;
+        border-color: #850260;
+        border-radius: 0.25rem;
+        border-width: 0.10rem;
+        float: right;
     }
     .card-panier__form > h2 {
         margin: 0.5rem
@@ -189,8 +210,10 @@ body {
         border-color: #850260;
         border-width: 0.25rem;
     }
-    .name, .price2, .id {
+    .prenom, .price2, .id {
         background : linear-gradient(to left top, #8f5bfe, #e78b07);
+        font-size: 2rem;
+        font-weight: bold;
     }
 }
 @media (min-width: 450px) {
@@ -203,10 +226,16 @@ body {
     .teddies {
         width: 45%;
     }
+    .width-vide-panier {
+        width: 30%;
+    }
 }
 @media (min-width: 1024px) {
     .card-img-top {
         width: 50%;
         height: 50%;
+    }
+    .width-vide-panier {
+        width: 25%;
     }
 }
