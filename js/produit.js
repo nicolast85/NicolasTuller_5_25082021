@@ -1,3 +1,4 @@
+// On récupère uniquement l'article dont on a besoin via le paramètre dans la requête
 fetch ("http://localhost:3000/api/teddies/" + teddieId()) 
     .then (response=>response.json())
     .then(teddie=>{
@@ -12,7 +13,7 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
     return location.search.split('=')[1];
   }
 
-  // fonction qui permet de selectionner la couleur
+  // fonction qui permet de sélectionner la couleur
   function getSelectedColors() {
     return colors.value;
   }
@@ -65,7 +66,7 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
     option.text = teddie.colors[i];
     select.appendChild(option);
 
-}
+  }
   
   // Affiche le prix en Euro des teddies
     let string = document.createElement('string');

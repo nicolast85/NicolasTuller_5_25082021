@@ -166,7 +166,7 @@ function formulaire() {
         localStorage.setItem("orderId", order.orderId);
  
         // Destination de la requête
-        document.location.href = "confirmation.html";
+        // document.location.href = "confirmation.html";
       })      
         .catch((err) => {
           alert("Il y a eu une erreur : " + err);
