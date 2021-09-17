@@ -139,29 +139,31 @@ function formulaire() {
         },
         products: produitAcheter,
       };
+      console.log(order);
 
       // Affichage uniquement du prix sur la prochaine page
       let priceConfirmation = document.querySelector(".total").innerText;
       priceConfirmation = priceConfirmation.split(" :");
 
       // Envoi de la requête POST au back-end
-      const options = fetch("http://localhost:3000/api/teddies/order", {
+      fetch("http://localhost:3000/api/teddies/order", {
         method: "POST",
-        body: JSON.stringify(order),
         headers: { 
+          "Accept": "application/json",
           "Content-Type": "application/json"
         },
+        body: JSON.stringify(order),
       })
       // Envoie de la requête, on changera de page avec un localStorage qui ne contiendra 
       // plus que le prénom, l'orderId et le prix.
-      fetch("http://localhost:3000/api/teddies/order", options)
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+      .then((order) => {
         localStorage.clear();
+        orderId = order.orderId;
+        console.log(orderId);
         localStorage.setItem("name", inputPrenom.value);
         localStorage.setItem("total", priceConfirmation[1]);
-        localStorage.setItem("orderId", data.orderId);
+        localStorage.setItem("orderId", order.orderId);
  
         // Destination de la requête
         document.location.href = "confirmation.html";
