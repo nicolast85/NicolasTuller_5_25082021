@@ -16,5 +16,6 @@ function orderConfirm() {
   orderTotal.innerText = localStorage.getItem("total");
   orderId.innerText = localStorage.getItem("orderId");
 
-  
+  // On vide le localStorage pour de prochain achat
+  localStorage.clear(); 
 }

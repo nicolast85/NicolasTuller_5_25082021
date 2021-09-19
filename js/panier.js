@@ -127,7 +127,11 @@ function formulaire() {
       // qui sont les produits achetés, et "order" contiendra ce tableau ainsi que l'objet qui 
       // contient les infos de l'acheteur
       let produitAcheter = [];
-      produitAcheter.push(objetLocalStorage);
+      for (let produit in objetLocalStorage) {
+        let productsId = objetLocalStorage[produit]._id;
+        produitAcheter.push((productsId));
+      }
+      console.log(produitAcheter);
 
       const order = {
         contact: {
