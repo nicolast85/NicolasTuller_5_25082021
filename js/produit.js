@@ -3,10 +3,10 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
     .then (response=>response.json())
     .then(teddie=>{
         viewTeddie(teddie);
-})
+    })
     .catch (function (err) {
         window.alert('Le serveur n\'est pas disponible, essayez ultérieurement.')
-  });
+    });
 
   // fonction qui recupère l 'ID du teddie
   function teddieId() {

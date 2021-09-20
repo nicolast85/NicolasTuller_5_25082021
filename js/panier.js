@@ -57,31 +57,28 @@ function panier() {
   }
 }
 
-// ---- Calcul et affichage du total de la commande du panier ----
+// ------ Calcul et affichage du total de la commande du panier ------
 function totalPanier () {
   let prixCommande = [];
-  let totalPrix = document.querySelector(".total");
 
-  // On push chaque prix du DOM dans un tableau
-  let teddiePrices = document.querySelectorAll(".price");
-  for (let price in teddiePrices) {
-    prixCommande.push(teddiePrices[price].innerHTML);
+  // On va chercher les prix dans le panier
+  for(let m = 0; m < objetLocalStorage.length; m++){
+    let prixPanier = objetLocalStorage[m].price;
+
+    // On met les prix du panier dans la variable prixCommande
+    prixCommande.push(prixPanier)
+    console.log(prixCommande);
   }
 
-  // On enlève les undefined du tableau
-  prixCommande = prixCommande.filter((und) => {
-    return und != undefined;
-  });
-
-  // On Transforme en nombre toute les valeurs du tableau
-  prixCommande = prixCommande.map((x) => parseFloat(x));
-
-  // Additionner les valeurs du tableau pour avoir le prix total
+  // On additionne les prix qu'il y a dans le tableau de la variable prixCommande avec la
+  // méthode .reduce
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  prixCommande = prixCommande.reduce(reducer);
+  const prixTotalPanier = prixCommande.reduce(reducer,0);
+  console.log(prixTotalPanier);
 
-  // Affichage du prix en €
-  totalPrix.innerText = `Total : ${(prixCommande = new Intl.NumberFormat("fr-FR",{ style: "currency", currency: "EUR", }).format(prixCommande))}`;
+  // On sélectionne la <div> ou s'affichera le prix total de la commande et sa mise en page
+  const totalPrix = document.querySelector(".total");
+  totalPrix.textContent = "Total : " + prixTotalPanier + " €";
 }
 
 
@@ -94,7 +91,7 @@ function viderPanier() {
     localStorage.clear();
   });
 }
-
+ 
 function formulaire() {
 
   // On récupère les inputs depuis le formulaire.
@@ -145,7 +142,7 @@ function formulaire() {
       };
       console.log(order);
 
-      // Affichage uniquement du prix sur la prochaine page
+      // Affichage uniquement du prix (nombre) sur la prochaine page
       let priceConfirmation = document.querySelector(".total").innerText;
       priceConfirmation = priceConfirmation.split(" :");
 
