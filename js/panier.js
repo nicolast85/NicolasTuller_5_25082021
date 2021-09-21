@@ -94,15 +94,108 @@ function viderPanier() {
  
 function formulaire() {
 
+  // ---Création des fonctions de validation de formulairevalidité---
+
+    // Création de la fonction de validation pour les champs : Prénom, Nom et Ville
+      function validNom(value) {
+          return /^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/.test(value);
+      };
+      // Création de la fonction de validation pour le champ : Code Postal
+      function validCp(value) {
+          return /^(([0-8][0-9])|(9[0-5]))[0-9]{3}$/.test(value);
+      };
+      // Création de la fonction de validation pour le champ : Adresse
+      function validAdresse(value) {
+          return /^\d+\s[A-z]+\s[A-z]+/.test(value);
+      };
+      // Création de la fonction de validation pour le champ : Adresse Mail
+      function validMail(value) {
+          return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
+      };
+      // Création de la fonction de validation pour le champ : Téléphone
+      function validTelephone(value) {
+          return /^[+](\d{3})\)?(\d{3})(\d{5,6})$|^(\d{10,10})$/.test(value);
+      };
+
   // On récupère les inputs depuis le formulaire.
   const submit = document.querySelector("#submit");
   let inputPrenom = document.querySelector("#prenom");
+
+      // Vérification de la validité du Prénom
+      inputPrenom.addEventListener("change", function (event) {
+        if (validNom(inputPrenom.value)) {
+        } else {
+            alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
+            event.preventDefault()
+        }
+      });
+
   let inputNom = document.querySelector("#nom");
+
+      // Vérification de la validité du Nom
+      inputNom.addEventListener("change", function (event) {
+        if (validNom(inputNom.value)) {
+        } else {
+            alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
+            event.preventDefault()
+        }
+      });
+
   let inputCp = document.querySelector("#cp");
+
+      // Vérification de la validité du Code Postal
+      inputCp.addEventListener("change", function (event) {
+        if (validCp(inputCp.value)) {
+        } else {
+            alert( "Merci d'inscrire un Code Postal valide" )
+            event.preventDefault()
+        }
+      });
+
   let inputVille = document.querySelector("#ville");
+
+      // Vérification de la validité de la Ville
+      inputVille.addEventListener("change", function (event) {
+        if (validNom(inputVille.value)) {
+        } else {
+            alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
+            event.preventDefault()
+        }
+      });
+
   let inputAdresse = document.querySelector("#adresse");
+
+      // Vérification de la validité de l'Adresse
+      inputAdresse.addEventListener("change", function (event) {
+        if (validAdresse(inputAdresse.value)) {
+        } else {
+            alert( "Merci d'inscrire une Adresse valide" )
+            event.preventDefault()
+        }
+      });
+
   let inputMail = document.querySelector("#mail");
+
+      // Vérification de la validité de l'Adresse Mail
+      inputMail.addEventListener("change", function (event) {
+        if (validMail(inputMail.value)) {
+        } else {
+            alert( "Merci d'inscrire une Adresse Mail valide" )
+            event.preventDefault()
+        }
+      });
+
   let inputTelephone = document.querySelector("#telephone");
+
+      // Vérification de la validité de l'Adresse Mail
+      inputTelephone.addEventListener("change", function (event) {
+        if (validTelephone(inputTelephone.value)) {
+        } else {
+            alert( "Merci d'inscrire un numéro de Téléphone valide" )
+            event.preventDefault()
+        }
+      });
+
   let erreur = document.querySelector(".erreur");
 
   // Lors d'un clic, si l'un des champs n'est pas rempli, on affiche une erreur 
@@ -118,6 +211,10 @@ function formulaire() {
       !inputTelephone.value
     ) {
       erreur.innerHTML = "Vous devez renseigner tous les champs pour finaliser votre commande !";
+
+    if (validNom(inputPrenom.value) && validNom(inputNom.value) && validCp(inputCp.value) && validNom(inputVille.value) && validAdresse(inputAdresse.value) && validMail(inputMail.value) && validTelephone(inputTelephone.value))
+    alert( "Merci d'inscrire des champs valide" )
+    e.preventDefault();
 
     } else {
       
@@ -168,7 +265,7 @@ function formulaire() {
         localStorage.setItem("orderId", order.orderId);
  
         // Destination de la requête
-        document.location.href = "confirmation.html";
+        // document.location.href = "confirmation.html";
       })      
         .catch((err) => {
           alert("Il y a eu une erreur : " + err);
