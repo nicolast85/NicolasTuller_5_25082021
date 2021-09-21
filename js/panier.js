@@ -117,9 +117,10 @@ function formulaire() {
       !inputMail.value ||
       !inputTelephone.value
     ) {
-      erreur.innerHTML = "Vous devez renseigner tous les champs pour finaliser votre commande !";     
-    } else {
+      erreur.innerHTML = "Vous devez renseigner tous les champs pour finaliser votre commande !";
 
+    } else {
+      
       // Si le formulaire est valide, le tableau "produitAcheter" contiendra un tableau d'objet 
       // qui sont les produits achetés, et "order" contiendra ce tableau ainsi que l'objet qui 
       // contient les infos de l'acheteur
@@ -160,7 +161,7 @@ function formulaire() {
       .then((response) => response.json())
       .then((order) => {
         localStorage.clear();
-        orderId = order.orderId;
+        let orderId = order.orderId;
         console.log(orderId);
         localStorage.setItem("name", inputPrenom.value);
         localStorage.setItem("total", priceConfirmation[1]);

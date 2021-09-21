@@ -9,8 +9,8 @@
 // Appel de l'API
 function getArticles() {
     return fetch("http://localhost:3000/api/teddies")
-        .then(function(httpBodyResponse) {
-            return httpBodyResponse.json()
+        .then(function(response) {
+            return response.json()
         })
         .then(function(articles) {
            return articles

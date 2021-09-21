@@ -64,31 +64,32 @@
                             <form class="form">   
                                 <div class="card-panier__form-line" id="bloc__prenom">
                                     <label for="prenom">Prénom :</label>
-                                    <input type="text" placeholder="Prénom" id="prenom" name="client_prenom" maxlength="20" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>                                    
+                                    <input type="text" id="prenom" name="client_prenom" required placeholder="Prénom" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" maxlength="20">                                                               
                                 </div>
                                 <div class="card-panier__form-line" id="bloc__nom">
                                     <label for="nom">Nom :</label>
-                                    <input type="text" placeholder="Nom" id="nom" name="client_nom" maxlength="20" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>           
+                                    <input type="text" id="nom" name="client_nom" required placeholder="Nom" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" maxlength="20">
+                                    <span class="validity"></span>           
                                 </div>                                               
                                 <div class="card-panier__form-line" id="bloc__cp">
                                     <label for="cp">Code postal :</label>
-                                    <input type="text" placeholder="Code postal" id="cp" name="client_cp" pattern="/^(([0-8][0-9])|(9[0-5]))[0-9]{3}$/" required>   
+                                    <input type="text" id="cp" name="client_cp" required placeholder="Code postal" pattern="/^(([0-8][0-9])|(9[0-5]))[0-9]{3}$/">   
                                 </div>
                                 <div class="card-panier__form-line" id="bloc__ville">
                                     <label for="ville">Ville :</label>
-                                    <input type="text" placeholder="Ville" id="ville" name="client_ville" maxlength="20" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/" required>
+                                    <input type="text" id="ville" name="client_ville" required placeholder="Ville" maxlength="20" pattern="/^[a-zA-ZéèîïÉÈÎÏ][A-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/">
                                 </div>                         
                                 <div class="card-panier__form-line" id="bloc__adresse">
                                     <label for="adresse">Adresse :</label>
-                                    <input type="text" placeholder="Adresse" id="adresse" name="client_adresse" pattern="/^\d+\s[A-z]+\s[A-z]+/" required>
+                                    <input type="text" id="adresse" name="client_adresse" required placeholder="Adresse" pattern="/^\d+\s[A-z]+\s[A-z]+/">
                                 </div>
                                 <div class="card-panier__form-line" id="bloc__mail">
                                     <label for="mail">Mail :</label>
-                                    <input type="email" placeholder="@mail" id="mail" name="client_mail" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" required>
+                                    <input type="email" id="mail" name="client_mail" required placeholder="@mail" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}">
                                 </div>
                                 <div class="card-panier__form-line" id="bloc__telephone">
                                     <label for="telephone" >Téléphone :</label>
-                                    <input type="tel" placeholder="Numéro de téléphone" id="telephone" name="client_telephone" pattern="/^[+](\d{3})\)?(\d{3})(\d{5,6})$|^(\d{10,10})$/" required>
+                                    <input type="tel" id="telephone" name="client_telephone" required placeholder="Numéro de téléphone" pattern="/^[+](\d{3})\)?(\d{3})(\d{5,6})$|^(\d{10,10})$/">
                                 </div>
                                 <div class="erreur text-danger font-weight-bold m-2"></div>
                                 <div class="card-panier__form__buttons text-right mr-2">

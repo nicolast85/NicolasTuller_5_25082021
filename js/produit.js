@@ -21,62 +21,54 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
   // fonction qui affiche la fiche produit avec création des <div>
   function viewTeddie(teddie) {
 
-  let newDiv = document.createElement('div');
-  newDiv.className = 'card m-3 p-3';
+    let divArticle = document.createElement('div');
+    divArticle.className = 'card m-3 p-3';
+    teddieChoix.appendChild(divArticle);
 
-  teddieChoix.appendChild(newDiv);
+    // Image du teddie
+    let img = document.createElement('img');
+    img.className = 'card-img-top';
+    img.src = teddie.imageUrl;
+    img.alt = teddie.name;
+    divArticle.appendChild(img);
 
-  // Image du teddie
-  let img = document.createElement('img');
-  img.className = 'card-img-top';
-  img.src = teddie.imageUrl;
-  img.alt = teddie.name;
-
-  newDiv.appendChild(img);
-
-  let div1 = document.createElement('div');
-  div1.className = 'card-body';
+    let divTeddy = document.createElement('div');
+    divTeddy.className = 'card-body';
   
-  // Nom du teddie
-  let h1 = document.createElement('h1');
-  h1.className = 'card-title text-center';
-  h1.innerHTML = teddie.name;
+    // Nom du teddie
+    let h1 = document.createElement('h1');
+    h1.className = 'card-title text-center';
+    h1.innerHTML = teddie.name;
+    divTeddy.appendChild(h1);
 
-  div1.appendChild(h1);
+    // Description du teddie
+    let p = document.createElement('p');
+    p.className = 'card-text text-center';
+    p.innerHTML = teddie.description;
+    divTeddy.appendChild(p);
+    p.insertAdjacentText("beforebegin", "Description :");
 
-  // Description du teddie
-  let p = document.createElement('p');
-  p.className = 'card-text text-center';
-  p.innerHTML = teddie.description;
+    // Sélecteur des couleurs du teddie
+    let select = document.createElement('select');
+    select.className = 'custom-select';
+    select.id = 'colors';
+    divTeddy.appendChild(select);
+    select.insertAdjacentText("beforebegin", "Choix de la couleurs :");
 
-  div1.appendChild(p);
-  p.insertAdjacentText("beforebegin", "Description :");
-
-  // Sélecteur des couleurs du teddie
-  let select = document.createElement('select');
-  select.className = 'custom-select';
-  select.id = 'colors';
-
-  div1.appendChild(select);
-  select.insertAdjacentText("beforebegin", "Choix de la couleurs :");
-
-  // boucle pour afficher les différentes couleurs des teddies
-  for (let i = 0; i < teddie.colors.length; i++) {
-    let option = document.createElement('option');
-    option.text = teddie.colors[i];
-    select.appendChild(option);
-
-  }
+    // boucle pour afficher les différentes couleurs des teddies
+    for (let i = 0; i < teddie.colors.length; i++) {
+      let option = document.createElement('option');
+      option.text = teddie.colors[i];
+      select.appendChild(option);
+    }
   
   // Affiche le prix en Euro des teddies
     let string = document.createElement('string');
     string.className = 'card-price';
     string.innerHTML = teddie.price/100 + " €";
-
-    div1.appendChild(string);
+    divTeddy.appendChild(string);
     string.insertAdjacentText("beforebegin", "Prix : ");
-
-  newDiv.appendChild(div1); 
+    divArticle.appendChild(divTeddy); 
 
   // Bouton Ajouter au panier
   let button = document.createElement('button');
@@ -84,10 +76,10 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
   button.id = 'btnAjoutPanier'
   button.className = 'btn text-body';
   button.innerHTML = 'Ajouter au panier';
-
-  newDiv.appendChild(button);
-
-  button.addEventListener('click', addProduct) 
+  divArticle.appendChild(button);
+  
+  button.addEventListener('click', addProduct)
+  
 
   // fonction pour ajouter le produit au localstorage et l'avoir dans le panier
   function addProduct(){
@@ -101,8 +93,12 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
       products.push({_id : teddie._id, image : teddie.imageUrl, name : teddie.name, colors : colors.value, price : teddie.price/100});
       localStorage.setItem('products', JSON.stringify(products));
 
-      alert('Votre article a été ajouté au panier. Merci !');
+      window.confirm(teddie.name + " " + 'de couleur ' + colors.value + ' a été ajouté au panier. Merci !');
       window.location.reload();
+    
+    } else {
+      console.error('Retour du serveur : ', response.status);
+      alert('Erreur rencontrée : ' + response.status);
     } 
   };
 };
