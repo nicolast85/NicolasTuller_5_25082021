@@ -215,6 +215,9 @@ body {
         font-size: 2rem;
         font-weight: bold;
     }
+    .champ_valide {
+        display : block;
+    }
 }
 @media (min-width: 450px) {
     .card-img-top {
@@ -228,6 +231,9 @@ body {
     }
     .width-vide-panier {
         width: 30%;
+    }
+    .champ_valide {
+        display : inline;
     }
 }
 @media (min-width: 1024px) {

@@ -94,7 +94,7 @@ function viderPanier() {
  
 function formulaire() {
 
-  // ---Création des fonctions de validation de formulairevalidité---
+  // ---Création des fonctions de validation du formulaire---
 
     // Création de la fonction de validation pour les champs : Prénom, Nom et Ville
       function validNom(value) {
@@ -124,7 +124,11 @@ function formulaire() {
       // Vérification de la validité du Prénom
       inputPrenom.addEventListener("change", function (event) {
         if (validNom(inputPrenom.value)) {
+            document.querySelector("#prenom_valide").textContent = "Champ Valide !";
+            document.querySelector("#prenom_valide").className ='champ_valide text-success font-weight-bold';
         } else {
+            document.querySelector("#prenom_valide").textContent = "Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#prenom_valide").className ='champ_valide text-danger font-weight-bold';
             alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
             event.preventDefault()
         }
@@ -135,7 +139,11 @@ function formulaire() {
       // Vérification de la validité du Nom
       inputNom.addEventListener("change", function (event) {
         if (validNom(inputNom.value)) {
+            document.querySelector("#nom_valide").textContent = "Champ Valide !";
+            document.querySelector("#nom_valide").className ='champ_valide text-success font-weight-bold';
         } else {
+            document.querySelector("#nom_valide").textContent = "Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#nom_valide").className ='champ_valide text-danger font-weight-bold';
             alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
             event.preventDefault()
         }
@@ -146,7 +154,11 @@ function formulaire() {
       // Vérification de la validité du Code Postal
       inputCp.addEventListener("change", function (event) {
         if (validCp(inputCp.value)) {
+            document.querySelector("#cp_valide").textContent = "Champ Valide !";
+            document.querySelector("#cp_valide").className ='champ_valide text-success font-weight-bold';
         } else {
+            document.querySelector("#cp_valide").textContent = "Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#cp_valide").className ='champ_valide text-danger font-weight-bold';
             alert( "Merci d'inscrire un Code Postal valide" )
             event.preventDefault()
         }
@@ -157,7 +169,11 @@ function formulaire() {
       // Vérification de la validité de la Ville
       inputVille.addEventListener("change", function (event) {
         if (validNom(inputVille.value)) {
+            document.querySelector("#ville_valide").textContent = "Champ Valide !";
+            document.querySelector("#ville_valide").className ='champ_valide text-success font-weight-bold';
         } else {
+            document.querySelector("#ville_valide").textContent = "Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#ville_valide").className ='champ_valide text-danger font-weight-bold';
             alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
             event.preventDefault()
         }
@@ -168,7 +184,11 @@ function formulaire() {
       // Vérification de la validité de l'Adresse
       inputAdresse.addEventListener("change", function (event) {
         if (validAdresse(inputAdresse.value)) {
+            document.querySelector("#adresse_valide").textContent = "Champ Valide !";
+            document.querySelector("#adresse_valide").className ='champ_valide text-success font-weight-bold';
         } else {
+            document.querySelector("#adresse_valide").textContent = "Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#adresse_valide").className ='champ_valide text-danger font-weight-bold';
             alert( "Merci d'inscrire une Adresse valide" )
             event.preventDefault()
         }
@@ -179,7 +199,11 @@ function formulaire() {
       // Vérification de la validité de l'Adresse Mail
       inputMail.addEventListener("change", function (event) {
         if (validMail(inputMail.value)) {
+            document.querySelector("#mail_valide").textContent = "Champ Valide !";
+            document.querySelector("#mail_valide").className ='champ_valide text-success font-weight-bold';
         } else {
+            document.querySelector("#mail_valide").textContent = "Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#mail_valide").className ='champ_valide text-danger font-weight-bold';
             alert( "Merci d'inscrire une Adresse Mail valide" )
             event.preventDefault()
         }
@@ -187,10 +211,14 @@ function formulaire() {
 
   let inputTelephone = document.querySelector("#telephone");
 
-      // Vérification de la validité de l'Adresse Mail
+      // Vérification de la validité du numéro de Téléphone
       inputTelephone.addEventListener("change", function (event) {
         if (validTelephone(inputTelephone.value)) {
+            document.querySelector("#telephone_valide").textContent = "Champ Valide !";
+            document.querySelector("#telephone_valide").className ='champ_valide text-success font-weight-bold';
         } else {
+            document.querySelector("#telephone_valide").textContent = "Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#telephone_valide").className ='champ_valide text-danger font-weight-bold';
             alert( "Merci d'inscrire un numéro de Téléphone valide" )
             event.preventDefault()
         }
@@ -210,11 +238,8 @@ function formulaire() {
       !inputMail.value ||
       !inputTelephone.value
     ) {
-      erreur.innerHTML = "Vous devez renseigner tous les champs pour finaliser votre commande !";
 
-    if (validNom(inputPrenom.value) && validNom(inputNom.value) && validCp(inputCp.value) && validNom(inputVille.value) && validAdresse(inputAdresse.value) && validMail(inputMail.value) && validTelephone(inputTelephone.value))
-    alert( "Merci d'inscrire des champs valide" )
-    e.preventDefault();
+      erreur.innerHTML = "Vous devez renseigner tous les champs pour finaliser votre commande !";
 
     } else {
       
@@ -265,7 +290,7 @@ function formulaire() {
         localStorage.setItem("orderId", order.orderId);
  
         // Destination de la requête
-        document.location.href = "confirmation.html";
+        // document.location.href = "confirmation.html";
       })      
         .catch((err) => {
           alert("Il y a eu une erreur : " + err);
