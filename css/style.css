@@ -189,11 +189,11 @@ body {
         border-radius: 0.25rem;
         border-width: 0.10rem;
     }
-    #submit > h3 {
+    #submit > p {
         margin: 0.25rem;
         display: inline-block;
     }
-    #submit > h3:hover {
+    #submit > p:hover {
         cursor: pointer;
         color: #fff;
     }
