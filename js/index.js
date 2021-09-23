@@ -16,7 +16,7 @@ function getArticles() {
            return articles
         })
         .catch(function(error) {
-            window.alert('Le serveur n\'est pas disponible, essayez ultérieurement ou exécuter la commande "node server.js" merci.')
+            window.alert('Le serveur n\'est pas disponible, essayez ultérieurement merci.')
         })
 }
 

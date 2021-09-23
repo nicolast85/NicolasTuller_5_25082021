@@ -67,14 +67,12 @@ function totalPanier () {
 
     // On met les prix du panier dans la variable prixCommande
     prixCommande.push(prixPanier)
-    console.log(prixCommande);
   }
 
   // On additionne les prix qu'il y a dans le tableau de la variable prixCommande avec la
   // méthode .reduce
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const prixTotalPanier = prixCommande.reduce(reducer,0);
-  console.log(prixTotalPanier);
 
   // On sélectionne la <div> ou s'affichera le prix total de la commande et sa mise en page
   const totalPrix = document.querySelector(".total");
@@ -124,11 +122,11 @@ function formulaire() {
       // Vérification de la validité du Prénom
       inputPrenom.addEventListener("change", function (event) {
         if (validNom(inputPrenom.value)) {
-            document.querySelector("#prenom_valide").textContent = "Champ Valide !";
-            document.querySelector("#prenom_valide").className ='champ_valide text-success font-weight-bold';
+            document.querySelector("#prenom_valide").textContent = " Champ Valide !";
+            document.querySelector("#prenom_valide").className ='champ_valide text-success font-weight-bold far fa-check-circle';
         } else {
-            document.querySelector("#prenom_valide").textContent = "Veuillez à bien remplir ce champ merci !";
-            document.querySelector("#prenom_valide").className ='champ_valide text-danger font-weight-bold';
+            document.querySelector("#prenom_valide").textContent = " Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#prenom_valide").className ='champ_valide text-danger font-weight-bold far fa-times-circle';
             alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
             event.preventDefault()
         }
@@ -139,11 +137,11 @@ function formulaire() {
       // Vérification de la validité du Nom
       inputNom.addEventListener("change", function (event) {
         if (validNom(inputNom.value)) {
-            document.querySelector("#nom_valide").textContent = "Champ Valide !";
-            document.querySelector("#nom_valide").className ='champ_valide text-success font-weight-bold';
+            document.querySelector("#nom_valide").textContent = " Champ Valide !";
+            document.querySelector("#nom_valide").className ='champ_valide text-success font-weight-bold far fa-check-circle';
         } else {
-            document.querySelector("#nom_valide").textContent = "Veuillez à bien remplir ce champ merci !";
-            document.querySelector("#nom_valide").className ='champ_valide text-danger font-weight-bold';
+            document.querySelector("#nom_valide").textContent = " Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#nom_valide").className ='champ_valide text-danger font-weight-bold far fa-times-circle';
             alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
             event.preventDefault()
         }
@@ -154,11 +152,11 @@ function formulaire() {
       // Vérification de la validité du Code Postal
       inputCp.addEventListener("change", function (event) {
         if (validCp(inputCp.value)) {
-            document.querySelector("#cp_valide").textContent = "Champ Valide !";
-            document.querySelector("#cp_valide").className ='champ_valide text-success font-weight-bold';
+            document.querySelector("#cp_valide").textContent = " Champ Valide !";
+            document.querySelector("#cp_valide").className ='champ_valide text-success font-weight-bold far fa-check-circle';
         } else {
-            document.querySelector("#cp_valide").textContent = "Veuillez à bien remplir ce champ merci !";
-            document.querySelector("#cp_valide").className ='champ_valide text-danger font-weight-bold';
+            document.querySelector("#cp_valide").textContent = " Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#cp_valide").className ='champ_valide text-danger font-weight-bold far fa-times-circle';
             alert( "Merci d'inscrire un Code Postal valide" )
             event.preventDefault()
         }
@@ -169,11 +167,11 @@ function formulaire() {
       // Vérification de la validité de la Ville
       inputVille.addEventListener("change", function (event) {
         if (validNom(inputVille.value)) {
-            document.querySelector("#ville_valide").textContent = "Champ Valide !";
-            document.querySelector("#ville_valide").className ='champ_valide text-success font-weight-bold';
+            document.querySelector("#ville_valide").textContent = " Champ Valide !";
+            document.querySelector("#ville_valide").className ='champ_valide text-success font-weight-bold far fa-check-circle';
         } else {
-            document.querySelector("#ville_valide").textContent = "Veuillez à bien remplir ce champ merci !";
-            document.querySelector("#ville_valide").className ='champ_valide text-danger font-weight-bold';
+            document.querySelector("#ville_valide").textContent = " Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#ville_valide").className ='champ_valide text-danger font-weight-bold far fa-times-circle';
             alert( "Aucun chiffre ou symbole ne sont autorisés pour les champs : Prénom, Nom et Ville" )
             event.preventDefault()
         }
@@ -184,11 +182,11 @@ function formulaire() {
       // Vérification de la validité de l'Adresse
       inputAdresse.addEventListener("change", function (event) {
         if (validAdresse(inputAdresse.value)) {
-            document.querySelector("#adresse_valide").textContent = "Champ Valide !";
-            document.querySelector("#adresse_valide").className ='champ_valide text-success font-weight-bold';
+            document.querySelector("#adresse_valide").textContent = " Champ Valide !";
+            document.querySelector("#adresse_valide").className ='champ_valide text-success font-weight-bold far fa-check-circle';
         } else {
-            document.querySelector("#adresse_valide").textContent = "Veuillez à bien remplir ce champ merci !";
-            document.querySelector("#adresse_valide").className ='champ_valide text-danger font-weight-bold';
+            document.querySelector("#adresse_valide").textContent = " Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#adresse_valide").className ='champ_valide text-danger font-weight-bold far fa-times-circle';
             alert( "Merci d'inscrire une Adresse valide" )
             event.preventDefault()
         }
@@ -199,11 +197,11 @@ function formulaire() {
       // Vérification de la validité de l'Adresse Mail
       inputMail.addEventListener("change", function (event) {
         if (validMail(inputMail.value)) {
-            document.querySelector("#mail_valide").textContent = "Champ Valide !";
-            document.querySelector("#mail_valide").className ='champ_valide text-success font-weight-bold';
+            document.querySelector("#mail_valide").textContent = " Champ Valide !";
+            document.querySelector("#mail_valide").className ='champ_valide text-success font-weight-bold far fa-check-circle';
         } else {
-            document.querySelector("#mail_valide").textContent = "Veuillez à bien remplir ce champ merci !";
-            document.querySelector("#mail_valide").className ='champ_valide text-danger font-weight-bold';
+            document.querySelector("#mail_valide").textContent = " Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#mail_valide").className ='champ_valide text-danger font-weight-bold far fa-times-circle';
             alert( "Merci d'inscrire une Adresse Mail valide" )
             event.preventDefault()
         }
@@ -214,11 +212,11 @@ function formulaire() {
       // Vérification de la validité du numéro de Téléphone
       inputTelephone.addEventListener("change", function (event) {
         if (validTelephone(inputTelephone.value)) {
-            document.querySelector("#telephone_valide").textContent = "Champ Valide !";
-            document.querySelector("#telephone_valide").className ='champ_valide text-success font-weight-bold';
+            document.querySelector("#telephone_valide").textContent = " Champ Valide !";
+            document.querySelector("#telephone_valide").className ='champ_valide text-success font-weight-bold far fa-check-circle';
         } else {
-            document.querySelector("#telephone_valide").textContent = "Veuillez à bien remplir ce champ merci !";
-            document.querySelector("#telephone_valide").className ='champ_valide text-danger font-weight-bold';
+            document.querySelector("#telephone_valide").textContent = " Veuillez à bien remplir ce champ merci !";
+            document.querySelector("#telephone_valide").className ='champ_valide text-danger font-weight-bold far fa-times-circle';
             alert( "Merci d'inscrire un numéro de Téléphone valide" )
             event.preventDefault()
         }
@@ -242,7 +240,7 @@ function formulaire() {
       erreur.innerHTML = "Vous devez renseigner tous les champs pour finaliser votre commande !";
 
     } else {
-      
+
       // Si le formulaire est valide, le tableau "produitAcheter" contiendra un tableau d'objet 
       // qui sont les produits achetés, et "order" contiendra ce tableau ainsi que l'objet qui 
       // contient les infos de l'acheteur
@@ -290,7 +288,7 @@ function formulaire() {
         localStorage.setItem("orderId", order.orderId);
  
         // Destination de la requête
-        // document.location.href = "confirmation.html";
+        document.location.href = "confirmation.html";
       })      
         .catch((err) => {
           alert("Il y a eu une erreur : " + err);
