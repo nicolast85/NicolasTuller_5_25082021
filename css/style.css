@@ -173,6 +173,9 @@ body {
     .card-panier__form__button:hover {
         color: #fff;
     }
+    .card-panier__form__button {
+        font-size: 1.25rem;
+    }
     .total {
         font-size: 2.5rem;
         clear: right;
@@ -188,6 +191,7 @@ body {
     }
     #submit > h3 {
         margin: 0.25rem;
+        display: inline-block;
     }
     #submit > h3:hover {
         cursor: pointer;
