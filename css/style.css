@@ -130,12 +130,18 @@ body {
         border-width: 0.10rem;
         border-color: #850260;
     }
+    .btn-retour a:hover,
+    .width-vide-panier:hover,
+    button#submit:hover {
+        background : linear-gradient(to left top, #e78b07, #8f5bfe);
+    }
     #btnAjoutPanier {
         border-color: #850260;
         border-width: 0.10rem;
     }
     #btnAjoutPanier:hover {
         color: #fff;
+        background : linear-gradient(to left top, #e78b07, #8f5bfe);
     }
     label {
         font-weight: bold;

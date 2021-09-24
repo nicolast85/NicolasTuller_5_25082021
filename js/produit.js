@@ -74,7 +74,7 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
   let button = document.createElement('button');
   button.setAttribute = 'type', 'submit';
   button.id = 'btnAjoutPanier'
-  button.className = 'btn text-body';
+  button.className = 'btn';
   button.innerHTML = 'Ajouter au panier';
   divArticle.appendChild(button);
   
