@@ -102,7 +102,7 @@ function viderPanier() {
     localStorage.clear();
   });
 }
- 
+
 function formulaire() {
 
   // ---Création des fonctions de validation du formulaire---
@@ -247,17 +247,18 @@ function formulaire() {
       !inputVille.value ||
       !inputAdresse.value ||
       !inputMail.value ||
-      !inputTelephone.value
+      !inputTelephone.value ||
+      (panierEmpty() == true)
     ) {
 
-      erreur.innerHTML = "Vous devez renseigner tous les champs pour finaliser votre commande !";
+      erreur.innerHTML = "Vous devez renseigner tous les champs pour finaliser votre commande ou votre panier est vide !";
 
     } else {
 
-      // Et on vérifie que les inputs soient bien valide avant d'envoyer sinon la requête ne se fait pas
+      // Et on vérifie que les inputs soient bien valide et que le panier ne soit pas vide avant d'envoyer sinon la requête ne se fait pas
       if
       (validNom(inputPrenom.value) && validNom(inputNom.value) && validCp(inputCp.value) && validNom(inputVille.value) && validAdresse(inputAdresse.value) && validMail(inputMail.value) && validTelephone(inputTelephone.value))
-
+        
       {
 
       // Si le formulaire est valide, le tableau "produitAcheter" contiendra un tableau d'objet 
