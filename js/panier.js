@@ -1,3 +1,14 @@
+// Fonction pour savoir si le panier est vide
+  function panierEmpty() {
+    if (
+      objetLocalStorage == null ||
+      objetLocalStorage == 0
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 // Sélection de la classe ou j'injecte le contenue HTML
 let cart = document.querySelector(".card-panier__commande");
 
@@ -61,13 +72,15 @@ function panier() {
 function totalPanier () {
   let prixCommande = [];
 
-  // On va chercher les prix dans le panier
-  for(let m = 0; m < objetLocalStorage.length; m++){
-    let prixPanier = objetLocalStorage[m].price;
+  // On va chercher les prix dans le panier si le panier n'est pas vide
+  if (panierEmpty() == false) {
+    for(let m = 0; m < objetLocalStorage.length; m++){
+      let prixPanier = objetLocalStorage[m].price;
 
-    // On met les prix du panier dans la variable prixCommande
-    prixCommande.push(prixPanier)
-  }
+      // On met les prix du panier dans la variable prixCommande
+      prixCommande.push(prixPanier)
+    };
+  };
 
   // On additionne les prix qu'il y a dans le tableau de la variable prixCommande avec la
   // méthode .reduce
@@ -241,6 +254,12 @@ function formulaire() {
 
     } else {
 
+      // Et on vérifie que les inputs soient bien valide avant d'envoyer sinon la requête ne se fait pas
+      if
+      (validNom(inputPrenom.value) && validNom(inputNom.value) && validCp(inputCp.value) && validNom(inputVille.value) && validAdresse(inputAdresse.value) && validMail(inputMail.value) && validTelephone(inputTelephone.value))
+
+      {
+
       // Si le formulaire est valide, le tableau "produitAcheter" contiendra un tableau d'objet 
       // qui sont les produits achetés, et "order" contiendra ce tableau ainsi que l'objet qui 
       // contient les infos de l'acheteur
@@ -294,5 +313,6 @@ function formulaire() {
           alert("Il y a eu une erreur : " + err);
         });
       }
+    }
   });
 }
