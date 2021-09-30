@@ -1,8 +1,8 @@
 (async function() {
     const articles = await getArticles()
 
-    for (article of articles) {
-    displayArticles(article)
+    for (teddie of articles) {
+    displayArticles(teddie)
     }
 })()
 
@@ -21,14 +21,14 @@ function getArticles() {
 }
 
 // Disposition des données de l'API dans les balises 
-function displayArticles(article) {
+function displayArticles(teddie) {
     const templateElt = document.getElementById("templateArticle")
     const cloneElt = document.importNode(templateElt.content, true)
 
-    cloneElt.getElementById("imageUrl").src = article.imageUrl
-    cloneElt.getElementById("name").textContent = article.name
-    cloneElt.getElementById("price").textContent = article.price / 100 + " €"
-    cloneElt.getElementById("_id").href += '?id=' + article._id
+    cloneElt.getElementById("imageUrl").src = teddie.imageUrl
+    cloneElt.getElementById("name").textContent = teddie.name
+    cloneElt.getElementById("price").textContent = teddie.price / 100 + " €"
+    cloneElt.getElementById("_id").href += '?id=' + teddie._id
 
     document.getElementById("main").appendChild(cloneElt)
 }
