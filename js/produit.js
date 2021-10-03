@@ -12,7 +12,7 @@ fetch ("http://localhost:3000/api/teddies/" + teddieId())
   function teddieId() {
     return location.search.split('=')[1];
   }
-
+  console.log(location.search.split('='));
   // fonction qui permet de sélectionner la couleur
   function getSelectedColors() {
     return colors.value;
